@@ -41,8 +41,13 @@ export function useCloud<Item>(options: UseCloudOptions<Item>): UseCloudReturn<I
 
   // Calculate the item positions
   useEffect(() => {
-    if (!items.length) return undefined;
+    if (!items.length) {
+      setAllCalculated(false);
+      setPoints([]);
+      return undefined;
+    }
 
+    setAllCalculated(false);
     setPoints([]);
     cloud.update({ width, height, attempts, randomizer, collider });
 
