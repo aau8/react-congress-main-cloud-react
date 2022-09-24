@@ -2,7 +2,7 @@
 
 ## Reporting a Vulnerability
 
-If there are any vulnerabilities in **@alesmenzel/cloud**, don't hesitate to _report them_.
+If there are any vulnerabilities in **@alesmenzel/cloud-react**, don't hesitate to _report them_.
 
 1. Use any of the private contributor's contact addresses located in [package.json](./package.json).
 2. Describe the vulnerability.

@@ -5,7 +5,7 @@ Cloud generator bindings for React. See [@alesmenzel/cloud](https://www.npmjs.co
 ## Installation
 
 ```bash
-npm install @alesmenzel/cloud-react
+npm install @alesmenzel/cloud @alesmenzel/cloud-react
 ```
 
 ### Usage
