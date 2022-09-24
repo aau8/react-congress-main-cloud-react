@@ -10,6 +10,7 @@ export type UseCloudPoint<Item> = CloudPoint & {
 export type UseCloudReturn<Item> = {
   cloud: Cloud<Item>;
   points: UseCloudPoint<Item>[];
+  allCalculated: boolean;
 };
 export type UseCloudOptions<Item> = CloudOptions<Item> & {
   items: Item[];
@@ -21,6 +22,7 @@ export type UseCloudOptions<Item> = CloudOptions<Item> & {
 export function useCloud<Item>(options: UseCloudOptions<Item>): UseCloudReturn<Item> {
   const [points, setPoints] = useState<UseCloudPoint<Item>[]>([]);
   const [cloud] = useState(() => new Cloud<Item>(options));
+  const [allCalculated, setAllCalculated] = useState(!options.items.length);
 
   const {
     width,
@@ -50,7 +52,6 @@ export function useCloud<Item>(options: UseCloudOptions<Item>): UseCloudReturn<I
 
     function calculate() {
       const item = transformStable ? transformStable(items[i]) : items[i];
-      if (!item) return;
 
       let point = cloud.next(item);
 
@@ -72,6 +73,8 @@ export function useCloud<Item>(options: UseCloudOptions<Item>): UseCloudReturn<I
         } else {
           animationHandle = requestAnimationFrame(calculate);
         }
+      } else {
+        setAllCalculated(true);
       }
     }
 
@@ -99,7 +102,8 @@ export function useCloud<Item>(options: UseCloudOptions<Item>): UseCloudReturn<I
       cloud,
       points,
       setPoints,
+      allCalculated,
     }),
-    [cloud, points]
+    [cloud, points, allCalculated]
   );
 }
