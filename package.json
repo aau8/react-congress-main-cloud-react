@@ -1,6 +1,6 @@
 {
   "name": "@alesmenzel/cloud-react",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "React cloud generator.",
   "license": "MIT",
   "main": "./dist/cloud-react.js",
