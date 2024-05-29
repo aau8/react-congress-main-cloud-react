@@ -25,7 +25,7 @@
     "url": "git@github.com:alesmenzel/cloud-react.git"
   },
   "peerDependencies": {
-    "@alesmenzel/cloud": "^1.0.2",
+    "@alesmenzel/cloud": "^2.0.0",
     "react": ">=17.0.0",
     "react-dom": ">=17.0.0"
   },
